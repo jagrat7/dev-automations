@@ -14,7 +14,7 @@ Create 3 visually distinct frontend-only variants for an existing app using isol
 
 ```bash
 # From anywhere
-npx skills add jagrat7/dev-automations/frontend-variants
+npx skills add jagrat7/dev-automations --skill frontend-variants
 ```
 
 ## Use the skill

@@ -18,7 +18,7 @@ npx skills --help
 npx skills search frontend
 
 # Install this skill from this repository
-npx skills add jagrat7/dev-automations/frontend-variants
+npx skills add jagrat7/dev-automations --skill frontend-variants
 
 # List installed skills
 npx skills list
