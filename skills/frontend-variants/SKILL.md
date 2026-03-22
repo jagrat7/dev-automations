@@ -1,6 +1,6 @@
 ---
 name: frontend-variants
-description: Use when building a frontend with 3 distinct UI style variants using shadcn presets, worktrees, and ui-ux-pro-max design systems — each variant gets its own isolated git worktree with a unique shadcn preset skeleton and theme.
+description: "Use when building a frontend with 3 distinct UI style variants using shadcn presets, worktrees, and ui-ux-pro-max design systems - each variant gets its own isolated git worktree with a unique shadcn preset skeleton and theme."
 ---
 
 # Frontend Variants
