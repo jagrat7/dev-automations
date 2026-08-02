@@ -7,7 +7,7 @@ description: "Set up oxlint (linter) and oxfmt (formatter) for a JavaScript/Type
 
 ## Overview
 
-Set up [Oxc](https://oxc.rs) — oxlint (linter) + oxfmt (formatter) — for a JS/TS project. Replaces ESLint + Prettier with a single fast Rust-based toolchain.
+Set up [Oxc](https://oxc.rs) — oxlint (linter) + oxfmt (formatter) — for a JS/TS project. Fast Rust-based linting and formatting, minimal config.
 
 This skill adapts to the project: detects package manager, existing style (semicolons, quotes), framework (React/Vue/plain), and generated files to ignore.
 
@@ -29,24 +29,20 @@ Use the project's package manager (detect from lockfile: `bun.lock` → bun, `pn
 
 ```bash
 # bun
-bun add -D oxlint oxfmt oxlint-tsgolint
+bun add -D oxlint oxfmt
 
 # pnpm
-pnpm add -D oxlint oxfmt oxlint-tsgolint
+pnpm add -D oxlint oxfmt
 
 # npm
-npm add -D oxlint oxfmt oxlint-tsgolint
+npm add -D oxlint oxfmt
 ```
 
-`oxlint-tsgolint` enables type-aware linting (recommended for TS projects).
+**Optional — type-aware linting:** also install `oxlint-tsgolint` if the user wants type-aware rules (`no-floating-promises`, `await-thenable`, etc.). These catch real bugs but slow linting down. Ask before adding.
 
-### Step 3: Remove Legacy Tooling (if migrating)
+If the project already has ESLint/Prettier configs and the user wants to switch, remove them after confirming — otherwise leave them alone.
 
-If ESLint/Prettier configs exist, ask the user before removing. Remove:
-- config files: `.eslintrc*`, `eslint.config.*`, `.prettierrc*`, `prettier.config.*`
-- packages: `eslint`, `prettier`, `eslint-config-*`, `eslint-plugin-*`, `@typescript-eslint/*`, `prettier-plugin-*`
-
-### Step 4: Write `.oxlintrc.json`
+### Step 3: Write `.oxlintrc.json`
 
 Write a config adapted to the project. Key decisions:
 
@@ -85,7 +81,7 @@ If the project uses kebab-case filenames, add:
 ]
 ```
 
-### Step 5: Write `.oxfmtrc.json`
+### Step 4: Write `.oxfmtrc.json`
 
 Adapt to the project's existing style detected in Step 1:
 
@@ -107,7 +103,7 @@ Adapt to the project's existing style detected in Step 1:
 
 If Tailwind is detected (in deps or `tailwind.config.*`), set `sortTailwindcss: true` and add the `functions` list for any class-merge utilities the project uses (`clsx`, `cn`, `cva`).
 
-### Step 6: Add `package.json` Scripts
+### Step 5: Add `package.json` Scripts
 
 Add these to `scripts` (preserve existing scripts, don't overwrite):
 
@@ -118,7 +114,7 @@ Add these to `scripts` (preserve existing scripts, don't overwrite):
 "fmt:check": "oxfmt --check ."
 ```
 
-### Step 7: Configure VS Code
+### Step 6: Configure VS Code
 
 If `.vscode/` exists (or the user wants editor setup), merge into `.vscode/settings.json`:
 
@@ -148,7 +144,7 @@ Write `.vscode/extensions.json`:
 
 If `oxlint-tsgolint` is installed, add `"oxc.typeAware": true` to settings.
 
-### Step 8: Format + Fix
+### Step 7: Format + Fix
 
 Run once to establish a clean baseline:
 
@@ -163,7 +159,7 @@ If lint reports errors after fix, either:
 
 Target: `lint` exits 0 (warnings are fine). Re-run `fmt` after any lint fixes since fixes can change formatting.
 
-### Step 9: Document in AGENTS.md
+### Step 8: Document in AGENTS.md
 
 If an `AGENTS.md` exists, append a short section:
 
