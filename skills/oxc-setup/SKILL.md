@@ -29,16 +29,16 @@ Use the project's package manager (detect from lockfile: `bun.lock` → bun, `pn
 
 ```bash
 # bun
-bun add -D oxlint oxfmt
+bun add -D oxlint oxfmt oxlint-tsgolint
 
 # pnpm
-pnpm add -D oxlint oxfmt
+pnpm add -D oxlint oxfmt oxlint-tsgolint
 
 # npm
-npm add -D oxlint oxfmt
+npm add -D oxlint oxfmt oxlint-tsgolint
 ```
 
-**Optional — type-aware linting:** also install `oxlint-tsgolint` if the user wants type-aware rules (`no-floating-promises`, `await-thenable`, etc.). These catch real bugs but slow linting down. Ask before adding.
+`oxlint-tsgolint` enables type-aware linting (catches real bugs like unawaited promises and `await` on non-promises).
 
 If the project already has ESLint/Prettier configs and the user wants to switch, remove them after confirming — otherwise leave them alone.
 
