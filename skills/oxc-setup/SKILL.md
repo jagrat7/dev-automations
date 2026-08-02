@@ -21,7 +21,7 @@ Read these to adapt the setup:
 - existing config files (`.eslintrc*`, `eslint.config.*`, `.prettierrc*`, `prettier.config.*`) — note style choices to preserve
 - `tsconfig.json` — path aliases (e.g. `#/*`, `@/*`)
 - `.gitignore` — build output dirs, generated files
-- a sample source file — detect semicolon usage and quote style
+- a sample source file — detect semicolon usage
 
 ### Step 2: Install Packages
 
@@ -49,7 +49,8 @@ Write a config adapted to the project. Key decisions:
 - **plugins**: always `typescript`, `unicorn`, `oxc`. Add `react` if React detected. Add `jsdoc` only if asked.
 - **categories**: `correctness: "error"`, `suspicious: "warn"`. Add `perf: "warn"` only if asked.
 - **ignorePatterns**: `node_modules`, build dirs from `.gitignore` + `package.json`, generated files (e.g. `routeTree.gen.ts`, `**/*.gen.ts`), agent/tool dirs (`.agents`, `.claude`, `.codex`, `.output`, `.tanstack`, `.nitro`, `.venv`)
-- **rules**: keep minimal. Only add what the project's global conventions require (e.g. `unicorn/filename-case` kebab if the project uses kebab-case files).
+- **rules**: keep minimal — only the project's custom `local/*` rules plus conventions it actually uses (e.g. `unicorn/filename-case` kebab if the project uses kebab-case files). Do not add stock rule presets like `no-unused-vars` configs.
+- **type-aware**: do not set `options.typeAware` in the config file; enable it in VS Code settings instead (Step 6).
 
 Base template (adapt plugins/ignores per Step 1 findings):
 
@@ -89,7 +90,6 @@ Adapt to the project's existing style detected in Step 1:
 {
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
   "semi": <false if no semicolons detected, else true>,
-  "singleQuote": <true if single quotes detected, else false>,
   "sortTailwindcss": <true if tailwindcss detected>,
   "sortPackageJson": true,
   "ignorePatterns": [
@@ -101,7 +101,7 @@ Adapt to the project's existing style detected in Step 1:
 }
 ```
 
-If Tailwind is detected (in deps or `tailwind.config.*`), set `sortTailwindcss: true` and add the `functions` list for any class-merge utilities the project uses (`clsx`, `cn`, `cva`).
+If Tailwind is detected (in deps or `tailwind.config.*`), set `sortTailwindcss: true`.
 
 ### Step 5: Add `package.json` Scripts
 
