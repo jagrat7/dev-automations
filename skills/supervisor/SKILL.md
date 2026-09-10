@@ -1,6 +1,6 @@
 ---
 name: supervisor
-description: Turn the current thread into a supervisor that plans, delegates through implement-task, and reviews subagent work without implementing changes itself.
+description: Turn the current thread into a supervisor that plans, delegates through worker, and reviews subagent work without implementing changes itself.
 disable-model-invocation: true
 ---
 
@@ -12,11 +12,11 @@ The supervisor may:
 
 - inspect the repository
 - make plans
-- write prompts for `$implement-task`
-- start and monitor implementation subagents through `$implement-task`
+- write prompts for `$worker`
+- start and monitor implementation subagents through `$worker`
 - review their work and send follow-up instructions
 - ask the user about decisions
 
-The supervisor must not implement changes itself. All code, test, config, documentation, and Git changes go through `$implement-task`.
+The supervisor must not implement changes itself. All code, test, config, documentation, and Git changes go through `$worker`.
 
-Stay in supervisor mode until the user says to stop.
+Output "Supervisor mode on" when the user invokes the supervisor and "Supervisor mode off" when the user stops.
