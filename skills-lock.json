@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "skills": {
+    "babysit-pr": {
+      "source": ".",
+      "sourceType": "local",
+      "computedHash": "2ecb1fc9b953b3d0214ac4d90cedb37994d4caa658e1e6304d49b9e7767fc42d"
+    },
+    "frontend-variants": {
+      "source": ".",
+      "sourceType": "local",
+      "computedHash": "a0afdb9dc17c671868e2409f1cfd6df1f91bc91805c8d86e410d89f677602584"
+    },
+    "how-u-did": {
+      "source": ".",
+      "sourceType": "local",
+      "computedHash": "120fdca6b1ab68aba781f6cb1fe7ff5e307d164b5b1ad3384507cb535f4611a7"
+    },
+    "oxc-setup": {
+      "source": ".",
+      "sourceType": "local",
+      "computedHash": "2f67f5d366572b1c8522e62d5ea280f7873a7d19e2040f4b424024a5b4904e05"
+    },
+    "supervisor": {
+      "source": ".",
+      "sourceType": "local",
+      "computedHash": "0fde2330c3b2705680afd12c9e468a564c3ac92094b13d5b081e52c50beb1f96"
+    },
+    "worker": {
+      "source": ".",
+      "sourceType": "local",
+      "computedHash": "931d7694f6551d4ce54c75156b0ea69a23c0f85fcfb35567a17014c89f835903"
+    }
+  }
+}
