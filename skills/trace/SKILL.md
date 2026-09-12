@@ -1,6 +1,7 @@
 ---
 name: trace
 description: Explain how a result happened and where its information or changes came from, using plain language and direct links to the evidence.
+disable-model-invocation: true
 ---
 
 # Trace

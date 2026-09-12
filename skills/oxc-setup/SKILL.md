@@ -1,6 +1,7 @@
 ---
 name: oxc-setup
 description: "Set up oxlint (linter) and oxfmt (formatter) for a TypeScript project"
+disable-model-invocation: true
 ---
 
 # Oxc Setup
