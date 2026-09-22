@@ -92,6 +92,8 @@ return {
 
 `no-server-deep-imports` rejects `@obs-platform/api/services/internal` from outside the server module and allows `@obs-platform/api/services`. It checks imports, re-exports, dynamic imports, and TypeScript import types. The config supplies the alias, directory, and module list.
 
+The public import must resolve, but the rule does not require or check for an `index` file. This matcher only catches imports starting with the configured alias. Adapt it if the project uses relative imports or another import layout.
+
 ```js
 const checkSource = (node, sourceNode) => {
   const source = typeof sourceNode?.value === "string" ? sourceNode.value : null
