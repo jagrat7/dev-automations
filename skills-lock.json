@@ -14,7 +14,7 @@
     "oxc-setup": {
       "source": ".",
       "sourceType": "local",
-      "computedHash": "2f67f5d366572b1c8522e62d5ea280f7873a7d19e2040f4b424024a5b4904e05"
+      "computedHash": "2e6b137769cdb8c1e489dcec1567966fcd19678f8185a83cd000486fa97a4edb"
     },
     "supervisor": {
       "source": ".",
