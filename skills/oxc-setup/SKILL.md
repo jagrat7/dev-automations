@@ -10,7 +10,7 @@ disable-model-invocation: true
 
 Set up [Oxc](https://oxc.rs) — oxlint (linter) + oxfmt (formatter) — for a JS/TS project. 
 
-This skill adapts to the project: detects package manager, existing style (semicolons, quotes), framework (React/Vue/plain), and generated files to ignore.
+Adapt the setup to the project's package manager, existing style, framework, architecture, and generated files.
 
 
 ### Step 1: Detect Project Context
@@ -22,6 +22,7 @@ Read these to adapt the setup:
 - `tsconfig.json` — path aliases (e.g. `#/*`, `@/*`)
 - `.gitignore` — build output dirs, generated files
 - a sample source file — detect semicolon usage and quote style
+- For a full-stack app, inspect its env/config boundary, server module entry points, and service file conventions before considering architecture rules
 
 ### Step 2: Install Packages
 
@@ -106,15 +107,7 @@ Add these to `scripts` (preserve existing scripts, don't overwrite):
 
 ## Custom Rules (optional)
 
-If the project has custom oxlint JS plugins (e.g. in `dev/oxlint/`), wire them via `jsPlugins`:
-
-```json
-"jsPlugins": [
-  { "name": "local", "specifier": "./dev/oxlint/index.mjs" }
-]
-```
-
-Then enable rules under `local/<rule-name>`. Use `overrides` to scope rules to specific file patterns.
+For a full-stack app, read the [oxlint rule examples](references/fullstack-oxlint.md). Add a rule only when the project already follows that convention. Check its code before choosing paths, aliases, options, and file scope.
 
 ## Common Mistakes
 
