@@ -1,0 +1,7 @@
+interface:
+  display_name: "Comb"
+  short_description: "Split changes into focused commits, push, optionally PR"
+  default_prompt: "Use $comb to organize the current changes into focused commits and push the branch."
+
+policy:
+  allow_implicit_invocation: false
