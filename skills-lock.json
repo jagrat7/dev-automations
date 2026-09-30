@@ -16,6 +16,11 @@
       "sourceType": "local",
       "computedHash": "2e6b137769cdb8c1e489dcec1567966fcd19678f8185a83cd000486fa97a4edb"
     },
+    "stfu": {
+      "source": ".",
+      "sourceType": "local",
+      "computedHash": "7e291136a6323e891eed264a903446be4e2f45a7ce9c77880accb5e7a767648e"
+    },
     "supervisor": {
       "source": ".",
       "sourceType": "local",
