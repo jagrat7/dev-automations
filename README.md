@@ -7,6 +7,7 @@ A small collection of reusable agent skills.
 - `comb` - splits changes into focused commits and pushes; add `pr` to open or reuse a pull request
 - `icons` - finds official brand SVGs from brand pages, theSVG, svgl, or the brand's site
 - `t3-worktree-env` - symlinks the main checkout's env files into new git worktrees and installs dependencies
+- `create-skill` - writes a new skill in this repo, kept as short as a capable model needs
 - `frontend-variants` - builds 3 distinct frontend UI variants using isolated worktrees, shadcn presets, and design specs
 
 ## Usage (with `npx skills`)
@@ -47,5 +48,6 @@ To organize changes into commits and push, use `$comb`. Use
 - `skills/icons/SKILL.md` - brand icon lookup order and sources
 - `skills/t3-worktree-env/SKILL.md` - worktree env setup steps for T3 Code and git hooks
 - `skills/t3-worktree-env/scripts/setup-worktree.sh` - script copied into each project
+- `skills/create-skill/SKILL.md` - how skills in this repo are written and where they go
 - `skills/frontend-variants/SKILL.md` - full skill instructions
 - `skills/frontend-variants/README.md` - quick usage guide for this skill
