@@ -6,6 +6,11 @@
       "sourceType": "local",
       "computedHash": "2ecb1fc9b953b3d0214ac4d90cedb37994d4caa658e1e6304d49b9e7767fc42d"
     },
+    "create-skill": {
+      "source": ".",
+      "sourceType": "local",
+      "computedHash": "8054872b7dceb27109f4f827c04da67a85b1e54689953d2f00bb446d7f41d889"
+    },
     "frontend-variants": {
       "source": ".",
       "sourceType": "local",
